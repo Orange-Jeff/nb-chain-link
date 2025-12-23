@@ -1,0 +1,464 @@
+/**
+ * NB Chain Link - Widget CSS
+ * Version 1.1.0 - December 22, 2025
+ *
+ * Display modes: carousel, live, directory
+ * Themes: light, dark
+ * Widths: compact (350px), full (100%)
+ */
+
+/* =========================================================================
+   BASE WIDGET STYLES
+   ========================================================================= */
+
+.nb-chain-link-widget {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    border: 1px solid #333;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.nb-chain-link-error {
+    color: #dc3545;
+    padding: 10px;
+    background: #f8d7da;
+    border-radius: 4px;
+}
+
+/* =========================================================================
+   WIDTH VARIANTS
+   ========================================================================= */
+
+.nb-width-compact {
+    max-width: 350px;
+}
+
+.nb-width-full {
+    width: 100%;
+}
+
+/* =========================================================================
+   THEME: LIGHT
+   ========================================================================= */
+
+.nb-theme-light {
+    background: #ffffff;
+    color: #333;
+}
+
+.nb-theme-light .nb-widget-main {
+    border-bottom: 1px solid #eee;
+}
+
+.nb-theme-light .nb-nav {
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.nb-theme-light .nb-nav:hover {
+    background: #e9e9e9;
+}
+
+.nb-theme-light .nb-member-excerpt {
+    color: #666;
+}
+
+.nb-theme-light .nb-widget-actions {
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+.nb-theme-light .nb-btn {
+    background: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.nb-theme-light .nb-btn:hover {
+    background: #f0f0f0;
+}
+
+.nb-theme-light .nb-btn.nb-visit {
+    background: #0073aa;
+    color: #fff;
+    border-color: #0073aa;
+}
+
+.nb-theme-light .nb-btn.nb-visit:hover {
+    background: #005a87;
+}
+
+.nb-theme-light .nb-widget-footer {
+    background: #f5f5f5;
+    color: #666;
+}
+
+.nb-theme-light .nb-directory-header {
+    border-bottom: 1px solid #eee;
+}
+
+.nb-theme-light .nb-directory-item {
+    border-bottom: 1px solid #eee;
+}
+
+.nb-theme-light .nb-directory-item:hover {
+    background: #f9f9f9;
+}
+
+.nb-theme-light .nb-dir-name {
+    color: #0073aa;
+}
+
+.nb-theme-light .nb-dir-excerpt {
+    color: #666;
+}
+
+/* =========================================================================
+   THEME: DARK
+   ========================================================================= */
+
+.nb-theme-dark {
+    background: #1a1a2e;
+    color: #eee;
+}
+
+.nb-theme-dark .nb-widget-main {
+    border-bottom: 1px solid #333;
+}
+
+.nb-theme-dark .nb-nav {
+    background: #2d2d44;
+    color: #eee;
+    border: 1px solid #444;
+}
+
+.nb-theme-dark .nb-nav:hover {
+    background: #3d3d5c;
+}
+
+.nb-theme-dark .nb-member-excerpt {
+    color: #aaa;
+}
+
+.nb-theme-dark .nb-widget-actions {
+    background: #16162a;
+    border-bottom: 1px solid #333;
+}
+
+.nb-theme-dark .nb-btn {
+    background: #2d2d44;
+    color: #eee;
+    border: 1px solid #444;
+}
+
+.nb-theme-dark .nb-btn:hover {
+    background: #3d3d5c;
+}
+
+.nb-theme-dark .nb-btn.nb-visit {
+    background: #4dabf7;
+    color: #1a1a2e;
+    border-color: #4dabf7;
+}
+
+.nb-theme-dark .nb-btn.nb-visit:hover {
+    background: #74c0fc;
+}
+
+.nb-theme-dark .nb-widget-footer {
+    background: #16162a;
+    color: #888;
+}
+
+.nb-theme-dark .nb-directory-header {
+    border-bottom: 1px solid #333;
+}
+
+.nb-theme-dark .nb-directory-item {
+    border-bottom: 1px solid #333;
+}
+
+.nb-theme-dark .nb-directory-item:hover {
+    background: #2d2d44;
+}
+
+.nb-theme-dark .nb-dir-name {
+    color: #4dabf7;
+}
+
+.nb-theme-dark .nb-dir-excerpt {
+    color: #aaa;
+}
+
+/* =========================================================================
+   CAROUSEL / LIVE MODE LAYOUT
+   ========================================================================= */
+
+.nb-widget-main {
+    display: flex;
+    align-items: stretch;
+    padding: 0;
+}
+
+.nb-nav {
+    width: 40px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+    border: none;
+    flex-shrink: 0;
+}
+
+.nb-nav:focus {
+    outline: 2px solid #4dabf7;
+    outline-offset: -2px;
+}
+
+.nb-member-display {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nb-member-image {
+    margin-bottom: 10px;
+}
+
+.nb-member-image img {
+    max-width: 200px;
+    max-height: 80px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.nb-member-info {
+    width: 100%;
+}
+
+.nb-member-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.nb-member-excerpt {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.nb-member-rating {
+    font-size: 12px;
+    color: #f59e0b;
+}
+
+/* =========================================================================
+   ACTION BAR
+   ========================================================================= */
+
+.nb-widget-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 15px;
+}
+
+.nb-btn {
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s;
+}
+
+.nb-btn:focus {
+    outline: 2px solid #4dabf7;
+    outline-offset: 2px;
+}
+
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
+
+.nb-widget-footer {
+    text-align: center;
+    padding: 8px 15px;
+    font-size: 12px;
+}
+
+.nb-ring-name {
+    font-weight: 600;
+}
+
+/* =========================================================================
+   DIRECTORY MODE
+   ========================================================================= */
+
+.nb-mode-directory .nb-directory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+}
+
+.nb-mode-directory .nb-directory-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.nb-member-count {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.nb-directory-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.nb-directory-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    transition: background 0.2s;
+}
+
+.nb-directory-item:last-child {
+    border-bottom: none;
+}
+
+.nb-dir-thumb {
+    width: 60px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.nb-dir-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.nb-dir-name {
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.nb-dir-name:hover {
+    text-decoration: underline;
+}
+
+.nb-dir-excerpt {
+    font-size: 12px;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nb-dir-rating {
+    font-size: 11px;
+    color: #f59e0b;
+    margin-top: 2px;
+}
+
+.nb-rate-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.2s, transform 0.2s;
+    flex-shrink: 0;
+}
+
+.nb-rate-btn:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* =========================================================================
+   RATING POPUP
+   ========================================================================= */
+
+.nb-rating-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    padding: 20px;
+    z-index: 10000;
+    text-align: center;
+}
+
+.nb-rating-popup h4 {
+    margin: 0 0 15px 0;
+}
+
+.nb-rating-stars {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.nb-rating-stars span {
+    opacity: 0.3;
+    transition: opacity 0.2s;
+}
+
+.nb-rating-stars span:hover,
+.nb-rating-stars span.active {
+    opacity: 1;
+}
+
+.nb-rating-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+}
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+@media (max-width: 400px) {
+    .nb-width-compact {
+        max-width: 100%;
+    }
+
+    .nb-widget-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nb-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
